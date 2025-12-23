@@ -1,0 +1,1 @@
+{"virtualbox":{"/app":{"guestpath":"/app","hostpath":"/home/cliff/crud-master/srcs/billing-app","disabled":false,"__vagrantfile":true},"/scripts":{"guestpath":"/scripts","hostpath":"/home/cliff/crud-master/scripts","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/cliff/crud-master","disabled":false,"__vagrantfile":true}}}
