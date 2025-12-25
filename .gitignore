@@ -1,0 +1,11 @@
+# Ignore Virtual Environments
+venv/
+env/
+.env
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore Vagrant specific files
+.vagrant/
