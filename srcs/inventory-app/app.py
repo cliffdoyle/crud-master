@@ -48,6 +48,11 @@ def get_movies():
     movies = Movie.query.all()
     return jsonify([movie.to_json() for movie in movies])
 
+@app.route('/api/movies/<int:id>', methods=['GET'])
+def get_movie(id):
+    movie=Movie.query.get_or_404(id)
+    return jsonify(movie.to_json())
+
 @app.route('/api/movies', methods=['POST'])
 def create_movie():
     data = request.get_json()
