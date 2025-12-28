@@ -6,7 +6,12 @@ from flask import Flask, request, jsonify
 from flask_swagger_ui import get_swaggerui_blueprint
 
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder='static',
+    static_url_path='/static'
+)
+
 
 # --- CONFIGURATION ---
 # 1. Inventory Service URL (HTTP)
