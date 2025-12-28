@@ -3,6 +3,8 @@ import json
 import requests
 import pika
 from flask import Flask, request, jsonify
+from flask_swagger_ui import get_swaggerui_blueprint
+
 
 app = Flask(__name__)
 
@@ -87,3 +89,17 @@ def billing_ingest():
 if __name__ == '__main__':
     # CRITICAL: We run on port 8080 because Vagrant forwards host:8080 -> guest:8080
     app.run(host='0.0.0.0', port=8080)
+
+
+SWAGGER_URL = '/docs'
+API_URL = '/static/openapi.yaml'
+
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "Movie Platform Gateway API"
+    }
+)
+
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
